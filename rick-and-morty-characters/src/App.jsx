@@ -1,12 +1,19 @@
-import { useState } from 'react'
 import './App.css'
+import Logo from "./assets/Logo.png"
+import Content from './componets/content'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      hello
+    <div className='App'>
+      <div className='Header'>
+        <img src= {Logo} alt="Rick and Morty Logo" height="150px" width= "auto"/>
+      </div>
+      <div className="content-sec">
+        <Content />
+      </div>
+      
     </div>
   )
 }
