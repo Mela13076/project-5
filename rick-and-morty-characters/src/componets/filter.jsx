@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Filter(props){
     const { characters, setFilteredCharacters } = props;
     const [filters, setFilters] = useState([{ type: 'name', query: '' }]);
-    console.log(characters)
+    // console.log(characters)
 
     // Filter the data based on the query string and filter type
     const filterData = () => {
