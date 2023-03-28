@@ -1,50 +1,124 @@
-
 import React, { useState } from 'react';
 
 function Filter(props){
     const { characters, setFilteredCharacters } = props;
-    const [query, setQuery] = useState('');
-    const [filterType, setFilterType] = useState('name'); // Default filter type is Name
-
+    const [filters, setFilters] = useState([{ type: 'name', query: '' }]);
     console.log(characters)
-  // Filter the data based on the query string and filter type
+
+    // Filter the data based on the query string and filter type
     const filterData = () => {
         const filteredData = characters.filter((row) => {
-            const queryStr = query.trim().toLowerCase();
+            for (let i = 0; i < filters.length; i++) {
+                const filter = filters[i];
+                const queryStr = filter.query.trim().toLowerCase();
 
-            if (filterType === 'name') {
-                return row.name.toLowerCase().includes(queryStr);
-            } else if (filterType === 'status') {
-                return row.status.toLowerCase().includes(queryStr);
-            } else if (filterType === 'species') {
-                return row.species.toLowerCase().includes(queryStr);
-            } else if (filterType === 'location') {
-                return row.location.name.toLowerCase().includes(queryStr);
-            } else {
-                return true; // No filter type selected, return all rows
+                if (filter.type === 'name' && !row.name.toLowerCase().includes(queryStr)) {
+                    return false;
+                } else if (filter.type === 'status' && !row.status.toLowerCase().includes(queryStr)) {
+                    return false;
+                } else if (filter.type === 'species' && !row.species.toLowerCase().includes(queryStr)) {
+                    return false;
+                } else if (filter.type === 'location' && !row.location.name.toLowerCase().includes(queryStr)) {
+                    return false;
+                }
             }
+            return true; // All filters passed
         });
         setFilteredCharacters(filteredData);
     };
 
+    // Add a new filter
+    const addFilter = () => {
+        setFilters([...filters, { type: 'name', query: '' }]);
+    };
+
+    // Remove a filter by index
+    const removeFilter = (index) => {
+        const newFilters = [...filters];
+        newFilters.splice(index, 1);
+        setFilters(newFilters);
+    };
+
     return(
         <div className='filterSection'>
-            <input type="text" placeholder="Search..." value={query} onChange={(e) => setQuery(e.target.value)} />
+            {filters.map((filter, index) => (
+                <div key={index}>
+                    <input type="text" placeholder="Search..." value={filter.query} onChange={(e) => {
+                        const newFilters = [...filters];
+                        newFilters[index] = { ...filter, query: e.target.value };
+                        setFilters(newFilters);
+                    }} />
 
-            <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
-                <option value="name">Name</option>
-                <option value="status">Status</option>
-                <option value="species">Species</option>
-                <option value="location">Location</option>
-            </select>
+                    <select value={filter.type} onChange={(e) => {
+                        const newFilters = [...filters];
+                        newFilters[index] = { ...filter, type: e.target.value };
+                        setFilters(newFilters);
+                    }}>
+                        <option value="name">Name</option>
+                        <option value="status">Status</option>
+                        <option value="species">Species</option>
+                        <option value="location">Location</option>
+                    </select>
 
+                    <button onClick={() => removeFilter(index)}>X</button>
+                </div>
+            ))}
+            
+            <button onClick={addFilter}>Add filter</button>
             <button onClick={filterData}>Filter</button>
-            <button onClick={() => setFilteredCharacters(characters)}>Reset</button>
+            <button onClick={() => {setFilteredCharacters(characters); setFilters([{ type: 'name', query: '' }]);}}>Reset</button>
         </div>
     )
 }
 
 export default Filter
+
+// import React, { useState } from 'react';
+
+// function Filter(props){
+//     const { characters, setFilteredCharacters } = props;
+//     const [query, setQuery] = useState('');
+//     const [filterType, setFilterType] = useState('name'); // Default filter type is Name
+
+//     console.log(characters)
+//   // Filter the data based on the query string and filter type
+//     const filterData = () => {
+//         const filteredData = characters.filter((row) => {
+//             const queryStr = query.trim().toLowerCase();
+
+//             if (filterType === 'name') {
+//                 return row.name.toLowerCase().includes(queryStr);
+//             } else if (filterType === 'status') {
+//                 return row.status.toLowerCase().includes(queryStr);
+//             } else if (filterType === 'species') {
+//                 return row.species.toLowerCase().includes(queryStr);
+//             } else if (filterType === 'location') {
+//                 return row.location.name.toLowerCase().includes(queryStr);
+//             } else {
+//                 return true; // No filter type selected, return all rows
+//             }
+//         });
+//         setFilteredCharacters(filteredData);
+//     };
+
+//     return(
+//         <div className='filterSection'>
+//             <input type="text" placeholder="Search..." value={query} onChange={(e) => setQuery(e.target.value)} />
+
+//             <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+//                 <option value="name">Name</option>
+//                 <option value="status">Status</option>
+//                 <option value="species">Species</option>
+//                 <option value="location">Location</option>
+//             </select>
+
+//             <button onClick={filterData}>Filter</button>
+//             <button onClick={() => {setFilteredCharacters(characters); setQuery("")}}>Reset</button>
+//         </div>
+//     )
+// }
+
+// export default Filter
 
 // function Filter(props){
 //     const { data, setData } = props;
