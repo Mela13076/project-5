@@ -32,12 +32,13 @@ The following **additional** features are implemented:
 
 * [x] Added the ability to scroll through the table
 * [x] Added the a sticky table header
+* [x] Added a dynamic search bar
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/zU5ElWP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/UONQetV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap
