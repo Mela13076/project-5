@@ -67,3 +67,17 @@ table {
 h2{
   color: black;
 }
+
+.card{
+  background-color: rgb(0, 0, 0, 0.8);
+  border: 3px #4eced5 double;
+  width: 30%;
+  text-align: center;
+  
+}
+
+.dashboard{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
