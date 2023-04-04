@@ -46,6 +46,9 @@ function Content(){
           <div className="dash-sec">
             <Dashboard filteredCharacters={filteredCharacters}/>
           </div>
+          <div className="graph-sec">
+            <h2>The Graphs Will Go Here</h2>
+          </div>
             <div className="top-content">
                 {/* <Filter setFilteredCharacters={setFilteredCharacters}/> */}
                 <Filter characters={characters} setFilteredCharacters={setFilteredCharacters} handleFilter={handleFilter}/>

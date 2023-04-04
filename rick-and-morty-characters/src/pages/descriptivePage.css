@@ -1,0 +1,33 @@
+.descriptivePage{
+    align-items: center;
+    
+}
+h1{
+    color: black;
+}
+
+
+.desciptionCard{
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px #4eced5 double;
+    margin-bottom: 20px;
+}
+
+.mainLink{
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    width: 80px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px #4eced5 double;
+
+}
+
+Link:visited{
+    color: white;
+    text-decoration: none;
+}

@@ -38,11 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<<<<<<< HEAD
-<img src='./rick-and-morty-characters/src/assets/project5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-=======
 <img src='https://i.imgur.com/UONQetV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
->>>>>>> c8b2edf94e2616b5f6bbbdda1b00287e55ccfe64
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap
