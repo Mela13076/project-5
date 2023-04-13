@@ -24,24 +24,51 @@
 // export default Descriptive
 
 
-import { Link, useLocation } from 'react-router-dom';
+// import { Link, useLocation } from 'react-router-dom';
+// import './descriptivePage.css'
+
+// function Descriptive(){
+//     const location = useLocation();
+//     const { name, status, species, gender, origin, location: charLocation, episode } = location.state || {};
+//     console.log(location)
+//     return(
+//         <div className="descriptivePage">
+//             <h1>Description for: {name} </h1>
+//             <div className="desciptionCard">
+//                 <p>Name: {name}</p>
+//                 <p>Status: {status}</p>
+//                 <p>Species: {species}</p>
+//                 <p>Gender: {gender}</p>
+//                 <p>Origin: {origin} </p>
+//                 <p>Location: {charLocation?.name}</p>
+//                 <p>Episode count: {episode?.length} </p>
+//             </div>
+//             <div className="mainLink">
+//                 <Link to="/"> Table of characters </Link>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Descriptive
+
+import { Link } from 'react-router-dom';
 import './descriptivePage.css'
 
-function Descriptive(){
-    const location = useLocation();
-    const { name, status, species, gender, origin, location: charLocation, episode } = location.state || {};
-    console.log(location)
+function Descriptive(props){
+    console.log(props.location.state)
+    const { name, status, species, gender, origin, location, episodes} = props.location.state;
     return(
         <div className="descriptivePage">
-            <h1>Description for: {name} </h1>
+            <h1>Description for: {props.location.state.name} </h1>
             <div className="desciptionCard">
                 <p>Name: {name}</p>
                 <p>Status: {status}</p>
                 <p>Species: {species}</p>
                 <p>Gender: {gender}</p>
                 <p>Origin: {origin} </p>
-                <p>Location: {charLocation?.name}</p>
-                <p>Episode count: {episode?.length} </p>
+                <p>Location: {location}</p>
+                <p>Episode count: {episodes} </p>
             </div>
             <div className="mainLink">
                 <Link to="/"> Table of characters </Link>

@@ -113,15 +113,21 @@ function CharacterInfo({ data }) {
                             <td>{character.species}</td>
                             <td>{character.location.name}</td>
                             <td>
-                                <Link to={{ pathname: "/description", state: data}}>
+                                <Link to={{ 
+                                    pathname: "/description", 
+                                    state: {
+                                        name: character.name,
+                                        status: character.status,
+                                        gender: character.gender,
+                                        species: character.species,
+                                        location: character.location.name,
+                                        origin: character.origin.name,
+                                        episodes: character.episode.length
+                                    }
+                                }}>
                                     <img src={Portal} alt="link" width="100px" className="linkPortal"/>
                                 </Link>
                             </td>
-                            {/* <td>
-                                <Link to='/description'>
-                                    <img src={Portal} alt="link" width="100px" className="linkPortal"/>
-                                </Link>
-                            </td> */}
                         </tr>
                     ))}
                 </tbody>
@@ -131,3 +137,5 @@ function CharacterInfo({ data }) {
 }
 
 export default CharacterInfo;
+
+
