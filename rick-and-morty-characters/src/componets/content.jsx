@@ -1,5 +1,6 @@
 import Filter from "./filter"
 import CharacterInfo from "./characterInfo"
+import Graph from "./graph";
 import { useEffect, useState } from "react";
 import Dashboard from "./dashboard";
 
@@ -46,8 +47,9 @@ function Content(){
           <div className="dash-sec">
             <Dashboard filteredCharacters={filteredCharacters}/>
           </div>
-          <div className="graph-sec">
-            <h2>The Graphs Will Go Here</h2>
+          <div className="graph-sec" >
+            <h2>Residents in Location</h2>
+            <Graph data={filteredCharacters}/>
           </div>
             <div className="top-content">
                 {/* <Filter setFilteredCharacters={setFilteredCharacters}/> */}
