@@ -1,20 +1,21 @@
-.descriptivePage{
-    align-items: center;
-    
+.characterImage{
+    border: 3px #4eced5 double;
+    width: clamp(50%, 700px, 70%);
+    height: min(50%, 300px);
 }
-h1{
-    color: black;
-}
+
+
 
 
 .desciptionCard{
     background-color: rgb(0, 0, 0, 0.8);
     color: white;
-    width: auto;
+    width: 50%;
     margin: 0 auto;
     padding: 20px;
     border: 3px #4eced5 double;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .mainLink{
@@ -26,6 +27,11 @@ h1{
     border: 3px #4eced5 double;
 
 }
+
+.mainLink a {
+    text-decoration: none;
+    color: white;
+  }
 
 Link:visited{
     color: white;

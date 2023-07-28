@@ -32,12 +32,8 @@ function App(){
     <div className="App">
       <Routes>
         <Route path="/" element={<Main />} />
-        {/* <Route path="/description/:id" element={<Descriptive />} /> */}
-        <Route 
-          path="/description" 
-          element={<Descriptive />} 
-
-        />
+        <Route path="/description/:id" element={<Descriptive />} />
+        {/* <Route path="/description" element={<Descriptive />} /> */}
       </Routes>
     </div>
   )

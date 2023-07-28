@@ -13,6 +13,11 @@
   .bottom-content{
     background-color: rgb(0, 0, 0, 0.8);
   }
+
+  .mainHeader{
+    width: clamp(50%, 700px, 90%);
+    height: min(50%, 300px);
+  }
   
   .graph-sec{
     background-color: rgb(0, 0, 0, 0.8);
@@ -92,6 +97,20 @@
     margin-bottom: 20px;
   }
   
-  .linkPortal:hover{
+  /* .linkPortal:hover{
+    cursor: pointer;
+  } */
+
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .linkPortal:hover {
+    animation: rotateAnimation 2s linear infinite; /* Adjust the animation duration and timing function as needed */
     cursor: pointer;
   }

@@ -6,7 +6,7 @@ function Main(){
     return (
         <div className="mainPage">
              <div className='Header'>
-                <img src= {Logo} alt="Rick and Morty Logo" height="150px" width= "auto"/>
+                <img className="mainHeader" src= {Logo} alt="Rick and Morty Logo" height="150px" width= "auto"/>
                 <h2>Search through most characters found in Rick and Morty!</h2>
             </div>
             <div className="content-sec">
